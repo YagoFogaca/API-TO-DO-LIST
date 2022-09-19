@@ -12,7 +12,7 @@ export class ServiceTaks {
   }
 
   async getById(taksId) {
-    return await this.getById.execute(id);
+    return await this.getById.execute(taksId);
   }
 
   async update(taks) {
