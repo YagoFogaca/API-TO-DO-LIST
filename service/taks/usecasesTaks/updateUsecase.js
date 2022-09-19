@@ -1,13 +1,13 @@
-import { IndexTaksEntity } from "../../../entitys/taksEntity/indexTaks";
+import { IndexTaksEntity } from "../../../entitys/taksEntity/indexTaks.js";
 
 export class UpdateUsecase {
-  constructor(repository, getById) {
+  constructor(repository, getByIdUsecase) {
     this.repository = repository;
-    this.getById = getById;
+    this.getByIdUsecase = getByIdUsecase;
   }
 
   async execute(taks) {
-    const oldTaks = await this.getById(taks.id);
+    const oldTaks = await this.getByIdUsecase.execute(taks.id);
 
     const taksModified = Object.assign(oldTaks, taks);
     IndexTaksEntity.taksEntity(taksModified);

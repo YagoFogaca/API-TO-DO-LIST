@@ -6,8 +6,8 @@ export class CreateUsecase {
   }
 
   async execute(taks) {
-    IndexTaksEntity.taksEntity(taks);
-    const taskCreation = await this.repository.create(taks);
+    const taksEntity = IndexTaksEntity.taksEntity(taks);
+    const taskCreation = await this.repository.create(taksEntity);
 
     if (!taskCreation) {
       throw new Error("Task creation failed");

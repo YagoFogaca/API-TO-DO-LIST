@@ -1,23 +1,23 @@
-import { taksDB } from "../../mongo/schemas/schemaTaks/schemaTaks";
+import { taksDB } from "../../mongo/schemas/schemaTaks/schemaTaks.js";
 
 export class RepositoryTaks {
-  async getAll() {
-    return taksDB.find();
+  static async getAll(id_user) {
+    return await taksDB.find({ id_user: id_user });
   }
 
-  async getById(taksId) {
-    return taksDB.findOne({ id: taksId });
+  static async getById(taksId) {
+    return await taksDB.findOne({ id: taksId });
   }
 
-  async create(taks) {
-    return taksDB.create(taks);
+  static async create(taks) {
+    return await taksDB.create(taks);
   }
 
-  async update(taks) {
-    return taksDB.findByIdAndUpdate({ id: taks.id }, taks, { new: true });
+  static async update(taks) {
+    return await taksDB.findByIdAndUpdate({ id: taks.id }, taks, { new: true });
   }
 
-  async delete(taksId) {
-    return taksDB.deleteOne({ id: taksId });
+  static async delete(taksId) {
+    return await taksDB.deleteOne({ id: taksId });
   }
 }
