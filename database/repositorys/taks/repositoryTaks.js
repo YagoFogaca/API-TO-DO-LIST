@@ -1,3 +1,5 @@
+import { taksDB } from "../../mongo/schemas/schemaTaks/schemaTaks";
+
 export class RepositoryTaks {
   async getAll() {
     return taksDB.find();
@@ -12,10 +14,10 @@ export class RepositoryTaks {
   }
 
   async update(taks) {
-    return taksDB.update(taks);
+    return taksDB.findByIdAndUpdate(taks);
   }
 
   async delete(taksId) {
-    return taksDB.delete({ id: taksId });
+    return taksDB.deleteOne({ id: taksId });
   }
 }
