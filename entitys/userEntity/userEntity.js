@@ -1,9 +1,8 @@
-import shortid from "shortid";
-import validator from "email-validator";
+import { Validate } from "../../utils/validator/validate.js";
 
 export class UserEntity {
   constructor(user) {
-    this.id = user.id ?? shortid.generate().toUpperCase();
+    this.id = user.id ?? Validate.shortId();
     this.name = user.name.trim();
     this.email = user.email;
     this.password = user.password;
@@ -16,7 +15,7 @@ export class UserEntity {
   }
 
   validateEmail() {
-    if (!validator.validate(this.email)) {
+    if (!Validate.validateEmail(this.email)) {
       throw new Error("Email is not valid");
     }
   }
