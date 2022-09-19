@@ -14,7 +14,7 @@ export class RepositoryTaks {
   }
 
   static async update(taks) {
-    return await taksDB.findByIdAndUpdate({ id: taks.id }, taks, { new: true });
+    return await taksDB.findOneAndUpdate({ id: taks.id }, taks, { new: true });
   }
 
   static async delete(taksId) {
