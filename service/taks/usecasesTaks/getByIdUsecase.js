@@ -3,8 +3,8 @@ export class GetByIdUsecase {
     this.repository = repository;
   }
 
-  async execute(id) {
-    const taks = await this.repository.getById(id);
+  async execute(taksId) {
+    const taks = await this.repository.getById(taksId);
     if (!taks) {
       throw new Error("No taks with that id");
     }

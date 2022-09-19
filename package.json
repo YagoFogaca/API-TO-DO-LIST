@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/YagoFogaca/API-TO-DO-LIST#readme",
   "dependencies": {
+    "dotenv": "^16.0.2",
     "email-validator": "^2.0.4",
+    "mongoose": "^6.6.1",
     "shortid": "^2.2.16"
   }
 }
