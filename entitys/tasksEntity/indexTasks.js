@@ -1,4 +1,4 @@
-import { TaksEntity } from "./taks.Entity.js";
+import { TaksEntity } from "./tasks.Entity.js";
 
 export class IndexTaksEntity {
   static taksEntity(taks) {

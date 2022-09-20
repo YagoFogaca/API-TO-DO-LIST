@@ -11,19 +11,19 @@ export class ServiceTaks {
     return await this.getAllUsecase.execute(id_user);
   }
 
-  async getById(taksId) {
-    return await this.getByIdUsecase.execute(taksId);
+  async getById(taskId) {
+    return await this.getByIdUsecase.execute(taskId);
   }
 
-  async update(taks) {
-    return await this.updateUsecase.execute(taks);
+  async update(task) {
+    return await this.updateUsecase.execute(task);
   }
 
-  async create(taks) {
-    return await this.createUsecase.execute(taks);
+  async create(task) {
+    return await this.createUsecase.execute(task);
   }
 
-  async delete(taksId) {
-    return await this.deleteUsecase.execute(taksId);
+  async delete(taskId) {
+    return await this.deleteUsecase.execute(taskId);
   }
 }

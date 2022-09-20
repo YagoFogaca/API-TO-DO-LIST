@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const schemaTaks = new Schema({
+const schemaTask = new Schema({
   id: { type: String, required: true },
   id_user: { type: String, required: true },
   day: { type: String, required: true },
@@ -10,4 +10,4 @@ const schemaTaks = new Schema({
   description: { type: String, required: false },
 });
 
-export const taksDB = model("Taks", schemaTaks);
+export const tasksDB = model("Taks", schemaTask);

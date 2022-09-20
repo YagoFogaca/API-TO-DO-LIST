@@ -3,8 +3,8 @@ export class DeleteUsecase {
     this.repository = repository;
   }
 
-  async execute(taksId) {
-    const taksDeleted = await this.repository.delete(taksId);
+  async execute(taskId) {
+    const taksDeleted = await this.repository.delete(taskId);
     if (!taksDeleted) {
       throw new Error("Taks not found");
     }

@@ -1,12 +1,12 @@
-import { IndexTaksEntity } from "../../../entitys/taksEntity/indexTaks.js";
+import { IndexTaksEntity } from "../../../entitys/tasksEntity/indexTasks.js";
 
 export class CreateUsecase {
   constructor(repository) {
     this.repository = repository;
   }
 
-  async execute(taks) {
-    const taksEntity = IndexTaksEntity.taksEntity(taks);
+  async execute(task) {
+    const taksEntity = IndexTaksEntity.taksEntity(task);
     const taskCreation = await this.repository.create(taksEntity);
 
     if (!taskCreation) {
