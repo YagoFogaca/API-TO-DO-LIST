@@ -11,7 +11,7 @@ import { ServiceTaks } from "../../service/tasks/serviceTaks";
 import { ControllersTasks } from "../../controllers/tasks/controllerTasks";
 import { RoutesTasks } from "../../routes/tasks/routesTasks";
 
-export function factoryTasks(router) {
+export function FactoryTasks(router) {
   const getAllUsecase = new GetAllUsecase(RepositoryTaks);
   const getByIdUsecase = new GetByIdUsecase(RepositoryTaks);
   const updateUsecase = new UpdateUsecase(RepositoryTaks, getByIdUsecase);

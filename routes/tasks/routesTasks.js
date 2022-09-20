@@ -4,7 +4,7 @@ export class RoutesTasks {
     this.router = router;
   }
 
-  Routes() {
+  route() {
     this.router.post("/create-tasks", (req, res) => {
       this.controller.createTasks(req, res);
     });
