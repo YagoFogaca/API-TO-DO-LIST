@@ -1,15 +1,15 @@
 import { RepositoryTaks } from "../../database/repositorys/task/repositoryTasks.js";
 
-import { CreateUsecase } from "../../service/tasks/usecasesTasks/createUsecasejs";
-import { DeleteUsecase } from "../../service/tasks/usecasesTasks/deleteUsecasejs";
-import { UpdateUsecase } from "../../service/tasks/usecasesTasks/updateUsecasejs";
-import { GetAllUsecase } from "../../service/tasks/usecasesTasks/getAllUsecasejs";
-import { GetByIdUsecase } from "../../service/tasks/usecasesTasks/getByIdUsecasejs";
+import { CreateUsecase } from "../../service/tasks/usecasesTasks/createUsecase.js";
+import { DeleteUsecase } from "../../service/tasks/usecasesTasks/deleteUsecase.js";
+import { UpdateUsecase } from "../../service/tasks/usecasesTasks/updateUsecase.js";
+import { GetAllUsecase } from "../../service/tasks/usecasesTasks/getAllUsecase.js";
+import { GetByIdUsecase } from "../../service/tasks/usecasesTasks/getByIdUsecase.js";
 
-import { ServiceTaks } from "../../service/tasks/serviceTaksjs";
+import { ServiceTaks } from "../../service/tasks/serviceTaks.js";
 
-import { ControllersTasks } from "../../controllers/tasks/controllerTasksjs";
-import { RoutesTasks } from "../../routes/tasks/routesTasksjs";
+import { ControllersTasks } from "../../controllers/tasks/controllerTasks.js";
+import { RoutesTasks } from "../../routes/tasks/routesTasks.js";
 
 export function FactoryTasks(router) {
   const getAllUsecase = new GetAllUsecase(RepositoryTaks);

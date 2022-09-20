@@ -40,7 +40,7 @@ export class ControllersTasks {
     try {
       const resService = await this.service.getById(req.params.id);
 
-      res.status(200).res(resService);
+      res.status(200).send(resService);
     } catch (err) {
       console.log(err);
       res.status(404).send(err.message);
