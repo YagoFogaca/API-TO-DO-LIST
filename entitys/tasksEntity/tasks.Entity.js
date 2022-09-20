@@ -1,6 +1,6 @@
 import { Validate } from "../../utils/validator/validate.js";
 
-export class taskEntity {
+export class TaskEntity {
   constructor(task) {
     this.id = task.id ?? Validate.shortId();
     this.id_user = task.id_user;
@@ -12,13 +12,14 @@ export class taskEntity {
     this.description = task.description ?? "";
   }
 
-  validatetask() {
+  validateTask(taks) {
+    console.log(taks);
     if (!this.id_user || !this.day || !this.hour || !this.task || !this.status) {
       throw new Error("Some fields were not reported");
     }
   }
 
-  printtask() {
+  printTask() {
     return {
       id: this.id,
       id_user: this.id_user,

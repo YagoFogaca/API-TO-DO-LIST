@@ -9,6 +9,6 @@ export class DeleteUsecase {
       throw new Error("Taks not found");
     }
 
-    return "Taks deleted successfully";
+    return "Task deleted successfully";
   }
 }
