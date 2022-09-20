@@ -6,8 +6,8 @@ export class UpdateUsecase {
     this.getByIdUsecase = getByIdUsecase;
   }
 
-  async execute(task) {
-    const oldTask = await this.getByIdUsecase.execute(task.id);
+  async execute(task, taskId) {
+    const oldTask = await this.getByIdUsecase.execute(taskId);
 
     const taskModified = Object.assign(oldTask, task);
     IndexTaksEntity.taksEntity(taskModified);

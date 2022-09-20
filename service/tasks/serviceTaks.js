@@ -15,8 +15,8 @@ export class ServiceTaks {
     return await this.getByIdUsecase.execute(taskId);
   }
 
-  async update(task) {
-    return await this.updateUsecase.execute(task);
+  async update(task, taskId) {
+    return await this.updateUsecase.execute(task, taskId);
   }
 
   async create(task) {

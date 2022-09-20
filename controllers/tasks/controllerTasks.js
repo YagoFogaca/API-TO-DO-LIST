@@ -47,9 +47,9 @@ export class ControllersTasks {
     }
   }
 
-  async update(res, res) {
+  async update(req, res) {
     try {
-      const resService = await this.service.update(res);
+      const resService = await this.service.update(req.body, req.params.id);
 
       res.satus(200).send(resService);
     } catch (err) {
