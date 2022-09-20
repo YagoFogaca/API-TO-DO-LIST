@@ -1,5 +1,5 @@
-import { ConnectionDatabase } from "./database/mongo/connection";
-import { FactoryTasks } from "./factories/tasks/factorieTasks";
+import { ConnectionDatabase } from "./database/mongo/connection.js";
+import { FactoryTasks } from "./factories/tasks/factorieTasks.js";
 import express, { Router } from "express";
 import cors from "cors";
 
