@@ -12,7 +12,7 @@ export class RoutesTasks {
       this.controller.deleteTasks(req, res);
     });
     this.router.get("/get-tasks", (req, res) => {
-      this.controller.getAll(req, res);
+      this.controller.getAllTasksUser(req, res);
     });
     this.router.get("/get-task/:id", (req, res) => {
       this.controller.getById(req, res);

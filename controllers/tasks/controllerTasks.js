@@ -25,9 +25,9 @@ export class ControllersTasks {
     }
   }
 
-  async getAll(req, res) {
+  async getAllTasksUser(req, res) {
     try {
-      const resService = await this.service.getAll(req.params.id_user);
+      const resService = await this.service.getAllTasksUser(req.params.id_user);
 
       res.satus(200).send(resService);
     } catch (err) {

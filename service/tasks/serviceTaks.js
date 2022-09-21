@@ -1,14 +1,14 @@
 export class ServiceTaks {
-  constructor(getAllUsecase, getByIdUsecase, updateUsecase, createUsecase, deleteUsecase) {
-    this.getAllUsecase = getAllUsecase;
+  constructor(getAllTasksUserUsecase, getByIdUsecase, updateUsecase, createUsecase, deleteUsecase) {
+    this.getAllTasksUserUsecase = getAllTasksUserUsecase;
     this.getByIdUsecase = getByIdUsecase;
     this.updateUsecase = updateUsecase;
     this.createUsecase = createUsecase;
     this.deleteUsecase = deleteUsecase;
   }
 
-  async getAll(id_user) {
-    return await this.getAllUsecase.execute(id_user);
+  async getAllTasksUser(id_user) {
+    return await this.getAllTasksUserUsecase.execute(id_user);
   }
 
   async getById(taskId) {
