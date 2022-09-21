@@ -29,7 +29,7 @@ export class ControllersTasks {
     try {
       const resService = await this.service.getAllTasksUser(req.params.id_user);
 
-      res.satus(200).send(resService);
+      res.status(200).send(resService);
     } catch (err) {
       console.log(err);
       res.status(404).send(err.message);

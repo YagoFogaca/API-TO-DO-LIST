@@ -11,7 +11,7 @@ const port = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(cors());
-app.use("/taks", tasks.route());
+app.use("/task", tasks.route());
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);

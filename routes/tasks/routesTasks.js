@@ -11,7 +11,7 @@ export class RoutesTasks {
     this.router.delete("/delete-tasks", (req, res) => {
       this.controller.deleteTasks(req, res);
     });
-    this.router.get("/get-tasks", (req, res) => {
+    this.router.get("/get-tasks/:id_user", (req, res) => {
       this.controller.getAllTasksUser(req, res);
     });
     this.router.get("/get-task/:id", (req, res) => {
