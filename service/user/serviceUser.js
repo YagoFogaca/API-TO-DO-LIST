@@ -1,5 +1,5 @@
 export class ServiceUser {
-  constructor(createUsecase, deleteUsecase, getByEmailUsecase, getByIdUsecase, updateUsecase) {
+  constructor(createUsecase, deleteUsecase, getByEmailUsecase, updateUsecase) {
     this.createUsecase = createUsecase;
     this.deleteUsecase = deleteUsecase;
     this.getByEmailUsecase = getByEmailUsecase;
@@ -19,6 +19,7 @@ export class ServiceUser {
   }
 
   async updateUser(user, userId) {
+    console.log(this.updateUsecase);
     return await this.updateUsecase.execute(user, userId);
   }
 }

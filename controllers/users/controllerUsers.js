@@ -1,6 +1,6 @@
 export class ControllersUsers {
   constructor(serviceUser) {
-    this.serviceUser = serviceUser;
+    this.service = serviceUser;
   }
 
   async createUser(req, res) {
