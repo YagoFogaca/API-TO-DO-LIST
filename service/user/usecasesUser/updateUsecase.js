@@ -13,8 +13,9 @@ export class UpdateUsecase {
 
     IndexUserEntity.userEntity(userModified);
 
-    const updatedUser = await this.respository.update(userModified);
+    const updatedUser = await this.repository.update(userModified);
 
+    console.log(updatedUser);
     if (!updatedUser) {
       throw new Error("For some reason it was not possible to update");
     }

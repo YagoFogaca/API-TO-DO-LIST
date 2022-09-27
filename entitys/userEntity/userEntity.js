@@ -28,13 +28,12 @@ export class UserEntity {
   }
 
   printUser() {
-    const user = {
+    return {
       id: this.id,
       name: this.name,
       email: this.email,
       password: this.password,
       image: this.image,
     };
-    return console.log(user);
   }
 }

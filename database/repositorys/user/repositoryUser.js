@@ -18,6 +18,6 @@ export class RepositoryUsers {
   }
 
   static async update(user) {
-    return await usersDB.findOneAndUpdate({ userId: user.id }, user, { new: true });
+    return await usersDB.findOneAndUpdate({ id: user.id }, user, { new: true });
   }
 }

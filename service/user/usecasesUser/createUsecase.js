@@ -1,19 +1,18 @@
 import { IndexUserEntity } from "../../../entitys/userEntity/indexUser.js";
 export class CreateUsecase {
-  constructor(repository, getByEmailUsecase) {
+  constructor(repository) {
     this.repository = repository;
-    this.getByEmailUsecase = getByEmailUsecase;
   }
 
   async execute(user) {
-    IndexUserEntity(user);
+    const userVerify = IndexUserEntity.userEntity(user);
 
-    const verifyUser = await this.getByEmailUsecase(user.email);
+    const verifyUser = await this.repository.getByEmail(userVerify.email);
     if (verifyUser) {
       throw new Error("Email is already registered");
     }
 
-    const userCreation = await this.repository.create(user);
+    const userCreation = await this.repository.create(userVerify);
     if (!userCreation) {
       throw new Error("For some reason it was not possible to register");
     }
