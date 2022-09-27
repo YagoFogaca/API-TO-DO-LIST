@@ -10,6 +10,7 @@ import { ControllersUsers } from "../../controllers/users/controllerUsers.js";
 import { RoutesUsers } from "../../routes/users/routesUsers.js";
 import { MiddlewareUser } from "../../middlewares/users/middlewareUser.js";
 import { Bcrypt } from "../../utils/auth/bcrypt.js";
+import { Jwt } from "../../utils/auth/jwt.js";
 
 export function FactoryUsers(router) {
   const createUsecase = new CreateUsecase(RepositoryUsers);
@@ -20,7 +21,7 @@ export function FactoryUsers(router) {
 
   const serviceUsers = new ServiceUser(createUsecase, deleteUsecase, getByEmailUsecase, updateUsecase);
 
-  const controllerUsers = new ControllersUsers(serviceUsers, Bcrypt);
+  const controllerUsers = new ControllersUsers(serviceUsers, Bcrypt, Jwt);
   const routesUsers = new RoutesUsers(controllerUsers, router, MiddlewareUser);
 
   return routesUsers;

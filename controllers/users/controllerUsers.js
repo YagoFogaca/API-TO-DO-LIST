@@ -1,7 +1,8 @@
 export class ControllersUsers {
-  constructor(serviceUser, bcrypt) {
+  constructor(serviceUser, bcrypt, jwt) {
     this.service = serviceUser;
     this.bcrypt = bcrypt;
+    this.jwt = jwt;
   }
 
   async createUser(req, res) {
@@ -36,7 +37,9 @@ export class ControllersUsers {
 
       this.bcrypt.compareBcrypt(userBody.password, user.password);
 
-      res.status(200).send(user);
+      const token = this.jwt.Sing(user);
+
+      res.status(200).send({ user: user, jwToken: token });
     } catch (err) {
       console.log(err);
       res.status(404).send(err.message);
