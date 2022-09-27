@@ -7,12 +7,11 @@ import { GetByIdUsecase } from "../../service/user/usecasesUser/getByIdUsecase.j
 import { UpdateUsecase } from "../../service/user/usecasesUser/updateUsecase.js";
 
 import { ServiceUser } from "../../service/user/serviceUser.js";
-
 import { ControllersUsers } from "../../controllers/users/controllerUsers.js";
-
+import { RoutesUsers } from "../../routes/users/routesUsers.js";
 await ConnectionDatabase.connectionDatabase();
 
-export function FactoryUsers() {
+export function FactoryUsers(router) {
   const createUsecase = new CreateUsecase(RepositoryUsers);
   const deleteUsecase = new DeleteUsecase(RepositoryUsers);
   const getByEmailUsecase = new GetByEmailUsecase(RepositoryUsers);
@@ -22,4 +21,7 @@ export function FactoryUsers() {
   const serviceUsers = new ServiceUser(createUsecase, deleteUsecase, getByEmailUsecase, updateUsecase);
 
   const controllerUsers = new ControllersUsers(serviceUsers);
+  const routesUsers = new RoutesUsers(controllerUsers, router);
+
+  return routesUsers;
 }
