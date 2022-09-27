@@ -8,6 +8,8 @@ import { UpdateUsecase } from "../../service/user/usecasesUser/updateUsecase.js"
 
 import { ServiceUser } from "../../service/user/serviceUser.js";
 
+import { ControllersUsers } from "../../controllers/users/controllerUsers.js";
+
 await ConnectionDatabase.connectionDatabase();
 
 export function FactoryUsers() {
@@ -17,15 +19,7 @@ export function FactoryUsers() {
   const getByIdUsecase = new GetByIdUsecase(RepositoryUsers);
   const updateUsecase = new UpdateUsecase(RepositoryUsers, getByIdUsecase);
 
-  const serviceUsers = new ServiceUser(createUsecase, deleteUsecase, getByEmailUsecase, getByIdUsecase, updateUsecase);
+  const serviceUsers = new ServiceUser(createUsecase, deleteUsecase, getByEmailUsecase, updateUsecase);
 
-  // const user = {
-  //   id: "GTEH1KI3X",
-  //   name: "Brenda Elisa",
-  //   email: "brendaferreirald230@gmail.com",
-  //   password: "1234567890",
-  //   image: "./img/img-2.png",
-  // };
-
-  // serviceUsers.updateUser(user, user.id);
+  const controllerUsers = new ControllersUsers(serviceUsers);
 }

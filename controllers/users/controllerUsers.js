@@ -36,17 +36,6 @@ export class ControllersUsers {
     }
   }
 
-  async getByIdUser(req, res) {
-    try {
-      const user = await this.service.getByIdUser(req.params.id);
-
-      res.status(200).send(user);
-    } catch (err) {
-      console.log(err);
-      res.status(404).send(err.message);
-    }
-  }
-
   async updateUser(req, res) {
     try {
       const user = await this.service.updateUser(req.body, req.params.id);

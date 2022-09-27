@@ -19,10 +19,6 @@ export class ServiceUser {
     return await this.getByEmailUsecase.execute(userEmail);
   }
 
-  async getByIdUser(userId) {
-    return await this.getByIdUsecase.execute(userId);
-  }
-
   async updateUser(user, userId) {
     return await this.updateUsecase.execute(user, userId);
   }
