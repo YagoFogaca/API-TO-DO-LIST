@@ -1,5 +1,4 @@
 import { RepositoryUsers } from "../../database/repositorys/user/repositoryUser.js";
-import { ConnectionDatabase } from "../../database/mongo/connection.js";
 import { CreateUsecase } from "../../service/user/usecasesUser/createUsecase.js";
 import { DeleteUsecase } from "../../service/user/usecasesUser/deleteUsecase.js";
 import { GetByEmailUsecase } from "../../service/user/usecasesUser/getByEmailUsecase.js";
@@ -9,7 +8,6 @@ import { UpdateUsecase } from "../../service/user/usecasesUser/updateUsecase.js"
 import { ServiceUser } from "../../service/user/serviceUser.js";
 import { ControllersUsers } from "../../controllers/users/controllerUsers.js";
 import { RoutesUsers } from "../../routes/users/routesUsers.js";
-await ConnectionDatabase.connectionDatabase();
 
 export function FactoryUsers(router) {
   const createUsecase = new CreateUsecase(RepositoryUsers);
