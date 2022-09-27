@@ -17,5 +17,6 @@ export class RoutesUsers {
     this.router.delete("/update-user/:id", (req, res) => {
       this.controller.updateUser(req, res);
     });
+    return this.router;
   }
 }
