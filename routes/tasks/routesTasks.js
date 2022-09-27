@@ -8,8 +8,8 @@ export class RoutesTasks {
     this.router.post("/create-tasks", (req, res) => {
       this.controller.createTasks(req, res);
     });
-    this.router.delete("/delete-tasks", (req, res) => {
-      this.controller.deleteTasks(req, res);
+    this.router.delete("/delete-tasks/:id", (req, res) => {
+      this.controller.deleteTask(req, res);
     });
     this.router.get("/get-tasks/:id_user", (req, res) => {
       this.controller.getAllTasksUser(req, res);
