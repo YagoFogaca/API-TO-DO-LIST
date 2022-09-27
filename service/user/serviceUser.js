@@ -8,22 +8,22 @@ export class ServiceUser {
   }
 
   async createUser(user) {
-    return await this.createUsecase(user);
+    return await this.createUsecase.execute(user);
   }
 
   async deleteUser(userId) {
-    return await this.deleteUsecase(userId);
+    return await this.deleteUsecase.execute(userId);
   }
 
   async getByEmailUser(userEmail) {
-    return await this.getByEmailUsecase(userEmail);
+    return await this.getByEmailUsecase.execute(userEmail);
   }
 
   async getByIdUser(userId) {
-    return await this.getByIdUsecase(userId);
+    return await this.getByIdUsecase.execute(userId);
   }
 
   async updateUser(user, userId) {
-    return await this.updateUsecase(user, userId);
+    return await this.updateUsecase.execute(user, userId);
   }
 }
