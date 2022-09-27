@@ -8,6 +8,7 @@ import { UpdateUsecase } from "../../service/user/usecasesUser/updateUsecase.js"
 import { ServiceUser } from "../../service/user/serviceUser.js";
 import { ControllersUsers } from "../../controllers/users/controllerUsers.js";
 import { RoutesUsers } from "../../routes/users/routesUsers.js";
+import { MiddlewareUser } from "../../middlewares/users/middlewareUser.js";
 
 export function FactoryUsers(router) {
   const createUsecase = new CreateUsecase(RepositoryUsers);
@@ -19,7 +20,7 @@ export function FactoryUsers(router) {
   const serviceUsers = new ServiceUser(createUsecase, deleteUsecase, getByEmailUsecase, updateUsecase);
 
   const controllerUsers = new ControllersUsers(serviceUsers);
-  const routesUsers = new RoutesUsers(controllerUsers, router);
+  const routesUsers = new RoutesUsers(controllerUsers, router, MiddlewareUser);
 
   return routesUsers;
 }
