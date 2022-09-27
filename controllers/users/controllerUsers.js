@@ -1,11 +1,15 @@
 export class ControllersUsers {
-  constructor(serviceUser) {
+  constructor(serviceUser, bcrypt) {
     this.service = serviceUser;
+    this.bcrypt = bcrypt;
   }
 
   async createUser(req, res) {
     try {
+      req.body.password = await this.bcrypt.hashBcrypt(req.body.password);
       await this.service.createUser(req.body);
+
+      console.log(req.body);
 
       res.status(201).send({ message: "User created successfully" });
     } catch (err) {
@@ -28,6 +32,9 @@ export class ControllersUsers {
   async getByEmailUser(req, res) {
     try {
       const user = await this.service.getByEmailUser(req.params.email);
+      const userBody = req.body;
+
+      this.bcrypt.compareBcrypt(userBody.password, user.password);
 
       res.status(200).send(user);
     } catch (err) {

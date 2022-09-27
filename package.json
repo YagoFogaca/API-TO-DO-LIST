@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/YagoFogaca/API-TO-DO-LIST#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "email-validator": "^2.0.4",
