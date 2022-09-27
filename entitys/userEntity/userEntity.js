@@ -6,6 +6,7 @@ export class UserEntity {
     this.name = user.name.trim();
     this.email = user.email;
     this.password = user.password;
+    this.image = user.image;
   }
 
   validateName() {
@@ -32,6 +33,7 @@ export class UserEntity {
       name: this.name,
       email: this.email,
       password: this.password,
+      image: this.image,
     };
     return console.log(user);
   }
