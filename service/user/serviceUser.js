@@ -3,7 +3,6 @@ export class ServiceUser {
     this.createUsecase = createUsecase;
     this.deleteUsecase = deleteUsecase;
     this.getByEmailUsecase = getByEmailUsecase;
-    this.getByIdUsecase = getByIdUsecase;
     this.updateUsecase = updateUsecase;
   }
 
