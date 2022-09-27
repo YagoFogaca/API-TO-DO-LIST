@@ -7,9 +7,9 @@ import { GetAllTasksUserUsecase } from "../../service/tasks/usecasesTasks/getAll
 import { GetByIdUsecase } from "../../service/tasks/usecasesTasks/getByIdUsecase.js";
 
 import { ServiceTaks } from "../../service/tasks/serviceTaks.js";
-
 import { ControllersTasks } from "../../controllers/tasks/controllerTasks.js";
 import { RoutesTasks } from "../../routes/tasks/routesTasks.js";
+import { MiddlewareTask } from "../../middlewares/tasks/middlewareTasks.js";
 
 export function FactoryTasks(router) {
   const getAllTasksUserUsecase = new GetAllTasksUserUsecase(RepositoryTaks);
@@ -27,7 +27,7 @@ export function FactoryTasks(router) {
   );
 
   const controllerTasks = new ControllersTasks(serviceTasks);
-  const routesTasks = new RoutesTasks(controllerTasks, router);
+  const routesTasks = new RoutesTasks(controllerTasks, router, MiddlewareTask);
 
   return routesTasks;
 }
