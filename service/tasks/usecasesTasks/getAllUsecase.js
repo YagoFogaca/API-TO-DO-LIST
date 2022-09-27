@@ -5,7 +5,7 @@ export class GetAllTasksUserUsecase {
 
   async execute(id_user) {
     const taks = await this.repository.getAllTasksUser(id_user);
-    if (!taks || taks.length === 0) {
+    if (!taks) {
       throw new Error("No to registered taks");
     }
 
