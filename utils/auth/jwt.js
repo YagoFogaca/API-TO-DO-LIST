@@ -8,7 +8,6 @@ export class Jwt {
   }
 
   static Verify(token) {
-    const verify = jwt.verify(token, process.env.SECRET);
-    console.log(verify);
+    return jwt.verify(token, process.env.SECRET);
   }
 }

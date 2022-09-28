@@ -15,7 +15,6 @@ export class UpdateUsecase {
 
     const updatedUser = await this.repository.update(userModified);
 
-    console.log(updatedUser);
     if (!updatedUser) {
       throw new Error("For some reason it was not possible to update");
     }

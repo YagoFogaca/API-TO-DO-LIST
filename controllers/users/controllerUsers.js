@@ -10,8 +10,6 @@ export class ControllersUsers {
       req.body.password = await this.bcrypt.hashBcrypt(req.body.password);
       await this.service.createUser(req.body);
 
-      console.log(req.body);
-
       res.status(201).send({ message: "User created successfully" });
     } catch (err) {
       console.log(err);

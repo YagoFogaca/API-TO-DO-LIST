@@ -19,7 +19,6 @@ export class ServiceUser {
   }
 
   async updateUser(user, userId) {
-    console.log(this.updateUsecase);
     return await this.updateUsecase.execute(user, userId);
   }
 }
