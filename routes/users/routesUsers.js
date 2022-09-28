@@ -18,7 +18,7 @@ export class RoutesUsers {
     this.router.delete("/delete-user/:id", (req, res) => {
       this.controller.deleteUser(req, res);
     });
-    this.router.get("/get-user/:email", (req, res) => {
+    this.router.post("/login-user", (req, res) => {
       this.controller.getByEmailUser(req, res);
     });
     this.router.patch(
