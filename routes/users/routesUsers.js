@@ -19,7 +19,7 @@ export class RoutesUsers {
       this.controller.deleteUser(req, res);
     });
     this.router.post("/login-user", (req, res) => {
-      this.controller.getByEmailUser(req, res);
+      this.controller.loginUser(req, res);
     });
     this.router.patch(
       "/update-user/:id",

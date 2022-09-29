@@ -9,7 +9,7 @@ export class RepositoryUsers {
     return await usersDB.deleteOne({ id: userID });
   }
 
-  static async getByEmail(userEmail) {
+  static async login(userEmail) {
     return await usersDB.findOne({ email: userEmail });
   }
 

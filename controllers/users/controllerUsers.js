@@ -28,10 +28,10 @@ export class ControllersUsers {
     }
   }
 
-  async getByEmailUser(req, res) {
+  async loginUser(req, res) {
     try {
       const userBody = req.body;
-      const user = await this.service.getByEmailUser(userBody.email);
+      const user = await this.service.loginUser(userBody.email);
 
       this.bcrypt.compareBcrypt(userBody.password, user.password);
 

@@ -7,7 +7,7 @@ export class CreateUsecase {
   async execute(user) {
     const userVerify = IndexUserEntity.userEntity(user);
 
-    const verifyUser = await this.repository.getByEmail(userVerify.email);
+    const verifyUser = await this.repository.login(userVerify.email);
     if (verifyUser) {
       throw new Error("Email is already registered");
     }

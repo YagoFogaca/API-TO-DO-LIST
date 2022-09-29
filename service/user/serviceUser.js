@@ -1,8 +1,8 @@
 export class ServiceUser {
-  constructor(createUsecase, deleteUsecase, getByEmailUsecase, updateUsecase) {
+  constructor(createUsecase, deleteUsecase, LoginUsecase, updateUsecase) {
     this.createUsecase = createUsecase;
     this.deleteUsecase = deleteUsecase;
-    this.getByEmailUsecase = getByEmailUsecase;
+    this.LoginUsecase = LoginUsecase;
     this.updateUsecase = updateUsecase;
   }
 
@@ -14,8 +14,8 @@ export class ServiceUser {
     return await this.deleteUsecase.execute(userId);
   }
 
-  async getByEmailUser(userEmail) {
-    return await this.getByEmailUsecase.execute(userEmail);
+  async loginUser(userEmail) {
+    return await this.LoginUsecase.execute(userEmail);
   }
 
   async updateUser(user, userId) {
