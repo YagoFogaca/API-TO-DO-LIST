@@ -1,4 +1,4 @@
-import { IndexTaksEntity } from "../../../entitys/tasksEntity/indexTasks.js";
+import { IndexTasksEntity } from "../../../entitys/tasksEntity/indexTasks.js";
 
 export class UpdateUsecase {
   constructor(repository, getByIdUsecase) {
@@ -10,7 +10,7 @@ export class UpdateUsecase {
     const oldTask = await this.getByIdUsecase.execute(taskId);
 
     const taskModified = Object.assign(oldTask, task);
-    IndexTaksEntity.taksEntity(taskModified);
+    IndexTasksEntity.tasksEntity(taskModified);
 
     return await this.repository.update(taskModified);
   }

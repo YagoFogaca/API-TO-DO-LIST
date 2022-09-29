@@ -1,6 +1,6 @@
 import { tasksDB } from "../../mongo/schemas/schemaTasks/schemaTasks.js";
 
-export class RepositoryTaks {
+export class RepositoryTasks {
   static async getAllTasksUser(id_user) {
     return await tasksDB.find({ id_user: id_user });
   }

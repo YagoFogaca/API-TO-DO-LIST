@@ -4,11 +4,11 @@ export class GetByIdUsecase {
   }
 
   async execute(taskId) {
-    const taks = await this.repository.getById(taskId);
-    if (!taks) {
+    const tasks = await this.repository.getById(taskId);
+    if (!tasks) {
       throw new Error("No task with that id");
     }
 
-    return taks;
+    return tasks;
   }
 }

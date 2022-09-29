@@ -1,4 +1,4 @@
-export class ServiceTaks {
+export class ServiceTasks {
   constructor(getAllTasksUserUsecase, getByIdUsecase, updateUsecase, createUsecase, deleteUsecase) {
     this.getAllTasksUserUsecase = getAllTasksUserUsecase;
     this.getByIdUsecase = getByIdUsecase;

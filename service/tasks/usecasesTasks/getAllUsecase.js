@@ -4,11 +4,11 @@ export class GetAllTasksUserUsecase {
   }
 
   async execute(id_user) {
-    const taks = await this.repository.getAllTasksUser(id_user);
-    if (!taks) {
-      throw new Error("No to registered taks");
+    const tasks = await this.repository.getAllTasksUser(id_user);
+    if (!tasks) {
+      throw new Error("No to registered tasks");
     }
 
-    return taks;
+    return tasks;
   }
 }

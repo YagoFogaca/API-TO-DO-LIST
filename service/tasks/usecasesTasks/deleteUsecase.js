@@ -4,9 +4,9 @@ export class DeleteUsecase {
   }
 
   async execute(taskId) {
-    const taksDeleted = await this.repository.delete(taskId);
-    if (!taksDeleted) {
-      throw new Error("Taks not found");
+    const taskDeleted = await this.repository.delete(taskId);
+    if (!taskDeleted) {
+      throw new Error("Task not found");
     }
 
     return "Task deleted successfully";

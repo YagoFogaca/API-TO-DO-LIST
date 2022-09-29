@@ -1,9 +1,9 @@
 import { TaskEntity } from "./tasks.Entity.js";
 
-export class IndexTaksEntity {
-  static taksEntity(taks) {
-    const taksEntity = new TaskEntity(taks);
-    taksEntity.validateTask(taks);
-    return taksEntity.printTask();
+export class IndexTasksEntity {
+  static tasksEntity(task) {
+    const tasksEntity = new TaskEntity(task);
+    tasksEntity.validateTask(task);
+    return tasksEntity.printTask();
   }
 }
