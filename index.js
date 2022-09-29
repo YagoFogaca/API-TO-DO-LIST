@@ -3,6 +3,9 @@ import { FactoryTasks } from "./factories/tasks/factorieTasks.js";
 import { FactoryUsers } from "./factories/users/factorieUsers.js";
 import express, { Router } from "express";
 import cors from "cors";
+import * as dotenv from "dotenv";
+dotenv.config();
+
 await ConnectionDatabase.connectionDatabase();
 
 const router = Router();
